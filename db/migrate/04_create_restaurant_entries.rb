@@ -2,8 +2,8 @@ class CreateRestaurantEntries < ActiveRecord::Migration
   def self.up
     create_table :restaurant_entries do |t|
       t.string :description
-      t.number :tip
-      t.number :tax
+      t.float :tip
+      t.float :tax
 
       t.timestamps
     end
