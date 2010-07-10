@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
 end
 
 class Entry < ActiveRecord::Base
-  # total, payer, beneficiaries
+  # total, payer, beneficiaries, description
   has_many :users, :through => :transactions
   belongs_to :user, :as => :payer
   belongs_to :restaurant_entry
@@ -19,7 +19,7 @@ class Transaction
 end
 
 class RestaurantEntry < ActiveRecord::Base
-  # entries, tip, tax
+  # entries, tip, tax, description
   has_many :entries
 
 end

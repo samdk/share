@@ -1,7 +1,8 @@
 class CreateTransactions < ActiveRecord::Migration
   def self.up
     create_table :transactions do |t|
-      
+      t.references :user
+      t.references :entry
 
       t.timestamps
     end
