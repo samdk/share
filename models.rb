@@ -1,3 +1,6 @@
+require 'rubygems'
+require 'active_record'
+
 class User < ActiveRecord::Base
   # username, entries, password, salt
   has_many :entries, :through => :transactions
