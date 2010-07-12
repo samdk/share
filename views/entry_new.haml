@@ -1,0 +1,16 @@
+%form{:method => :post}
+  %label{:for => 'total'} Total
+  %input{:type => 'text', :name => 'total', :id => 'total'}
+  %label{:for => 'description'} Description
+  %input{:type => 'text', :name => 'description', :id => 'description'}
+  %label{:for => 'user_id'} Payer
+  %select{:name => 'user_id', :id => 'user_id'}
+    - User.all.each do |u|
+      %option{:value => u.id}= u.username
+  %ul
+    - User.all.each do |u|
+      %li
+        %label{:for => "users_#{u.id}"}= u.username
+        %input{:type => 'checkbox', :name => "users_#{u.id}", :id => "users_#{u.id}"}
+  %input{:type => 'submit', :value => 'Create Entry'}
+

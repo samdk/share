@@ -1,0 +1,13 @@
+%table
+  %tr
+    %th Name
+    %th Paid
+    %th Spent
+    %th Difference
+  - @users.each do |u|
+    %tr
+      %td= u.username
+      %td= u.total_paid
+      %td= u.total_spent
+      %td= u.total_paid - u.total_spent
+

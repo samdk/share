@@ -1,0 +1,15 @@
+%table
+  %tr
+    %th Date
+    %th Total
+    %th Payer
+    %th Beneficiaries
+    %th Description
+  - @entries.each do |e|
+    %tr
+      %td= "#{e.date.month}/#{e.date.day}"
+      %td= e.total
+      %td= e.user.username
+      %td= e.users.collect {|b| b.username}.join(' ')
+      %td= e.description
+
